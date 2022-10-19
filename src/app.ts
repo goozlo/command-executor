@@ -1,6 +1,9 @@
-class App {
-    run() {
-        console.log('Done')
+import {FfmpegExecutor} from "./commands/ffmpeg/ffmpeg.executor";
+import {ConsoleLogger} from "./out/console-logger/console-logger";
+
+export class App {
+    async run() {
+        await new FfmpegExecutor(ConsoleLogger.getInstance()).execute()
     }
 }
 
